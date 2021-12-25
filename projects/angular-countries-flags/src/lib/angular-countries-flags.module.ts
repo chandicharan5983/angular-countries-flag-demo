@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlagComponent } from './flag/flag.component';
 
@@ -8,6 +9,7 @@ import { FlagComponent } from './flag/flag.component';
     FlagComponent
   ],
   imports: [
+    CommonModule
   ],
   exports: [
     FlagComponent
