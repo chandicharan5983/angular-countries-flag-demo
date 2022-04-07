@@ -1,24 +1,37 @@
-# AngularCountriesFlags
+# Angular Countries Flags
+A super simple angular library for displaying country flag.
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
+### Installation & Usage 
+1. Install the package
+Run the following command in your angular project to install the package.
+```
+npm i angular-countries-flags
+```
+2. Import `AngularCountriesFlagsModule` from `angular-countries-flags` in the module you want to use the flag component.
 
-## Code scaffolding
+```
+import { AngularCountriesFlagsModule } from 'angular-countries-flags'
 
-Run `ng generate component component-name --project angular-countries-flags` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-countries-flags`.
-> Note: Don't forget to add `--project angular-countries-flags` or else it will be added to the default project in your `angular.json` file. 
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AngularCountriesFlagsModule
+  ]
+  bootstrap: [AppComponent]
+})
+```
+3. Use the component to render flag in component.
+```
+<flag [code]="'IN'" [size]="'lg'"  [effect]="'round'"></flag>
+```
+---
 
-## Build
-
-Run `ng build angular-countries-flags` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build angular-countries-flags`, go to the dist folder `cd dist/angular-countries-flags` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test angular-countries-flags` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Input Properties
+| Property & type | Valid Values | Is Required
+| ----------- | ----------- |-----------
+| code : string | ISO 3166-1 alpha-2 country code | Yes
+| size :string  | `'sm' , 'md' , 'lg' , 'xl'`| No(Default to 'sm')
+| effect :string | `'round','sphere','wave','app'` | No
